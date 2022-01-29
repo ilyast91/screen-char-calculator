@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <title>Программа рассчета высоты символов на дисплее</title>
+</head>
+<body>
+
+<div class="container">
+    <h3 class="p-4">Программа рассчета высоты символов на дисплее</h3>
+    <div class="row">
+        <div class="col">
+            <div class="row pt-3">
+                <p>Угол обзора символа:</p>
+            </div>
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <label for="screen_distance_input" class="col-form-label">&alpha; <sub>сим(min)</sub> = </label>
+                </div>
+                <div class="col-auto">
+                    <span>16</span>
+                </div>
+                <div class="col-auto">
+                    <span class="form-text">(уч.мин)</span>
+                </div>
+            </div>
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <label for="char_angle_opt_input" class="col-form-label">&alpha; <sub>сим(опт)</sub> = </label>
+                </div>
+                <div class="col-auto">
+                    <input type="number" id="char_angle_opt_input" class="form-control" max="40" min="30" value="30">
+                </div>
+                <div class="col-auto">
+                    <span class="form-text">(уч.мин)</span>
+                </div>
+            </div>
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <label for="screen_distance_input" class="col-form-label">&alpha; <sub>сим(max)</sub> = </label>
+                </div>
+                <div class="col-auto">
+                    <span>60</span>
+                </div>
+                <div class="col-auto">
+                    <span class="form-text">(уч.мин)</span>
+                </div>
+            </div>
+            <div class="row pt-3">
+                <p>Растояние до дисплея:</p>
+            </div>
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <label for="screen_distance_input" class="col-form-label">L = </label>
+                </div>
+                <div class="col-auto">
+                    <input type="number" id="screen_distance_input" class="form-control" max="60000" min="100"
+                           value="600">
+                </div>
+                <div class="col-auto">
+                    <span class="form-text">(mm)</span>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row pt-3">
+                <p>Высота символа:</p>
+            </div>
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <label for="screen_distance_input" class="col-form-label">&Eta; <sub>сим(min)</sub> = </label>
+                </div>
+                <div class="col-auto">
+                    <span id="char_height_min">0</span>
+                </div>
+                <div class="col-auto">
+                    <span class="form-text">(мм)</span>
+                </div>
+            </div>
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <label for="screen_distance_input" class="col-form-label">&Eta; <sub>сим(опт)</sub> = </label>
+                </div>
+                <div class="col-auto">
+                    <span id="char_height_opt">0</span>
+                </div>
+                <div class="col-auto">
+                    <span class="form-text">(мм)</span>
+                </div>
+            </div>
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <label for="screen_distance_input" class="col-form-label">&Eta; <sub>сим(max)</sub> = </label>
+                </div>
+                <div class="col-auto">
+                    <span id="char_height_max">0</span>
+                </div>
+                <div class="col-auto">
+                    <span class="form-text">(мм)</span>
+                </div>
+            </div>
+            <div class="pt-2">
+                <button id="action_calculate" type="button" class="btn btn-secondary">Рассчитать</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="index.js"></script>
+</body>
+</html>
